@@ -65,9 +65,17 @@ ul {
 }
 .todo-item{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     max-width: 100%;
-    padding: 8px 12px;
+    padding: 10px;
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+}
+.list-group{
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 10px;
 }
