@@ -2,7 +2,18 @@ import {Tache} from "./Component/Tache.js";
 import { fetchJSON } from "./Component/api/api.js";
 
 document.addEventListener("DOMContentLoaded", async ()=> {
+    // LocalStorage
+    const todoInStorage = localStorage.getItem('todos')?.toString()
     let todos = [];
+    try{
+        if(todoInStorage){
+            todos = JSON.parse(todoInStorage) 
+        }
+    }catch(e){
+        console.error('Erreur parsing',e);
+    }
+
+ // api 
     try {
         // appel à la méthode fetchJSON
         todos =   await fetchJSON('https://jsonplaceholder.typicode.com/todos?_limit=5',{
